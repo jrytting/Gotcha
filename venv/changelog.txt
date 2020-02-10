@@ -1,0 +1,24 @@
+version 1.0
+-- base code implementation
+
+version 2.0
+-- Added a version variable
+-- check if directory / File exist before trying to use them
+-- Added code to rename .png file to pngx so as not to be automatically picked up my image viewing software.
+-- Simplified the code to exit the program
+
+version 2.1.0
+-- Adding configuration file
+-- Code updates to read from configuration file, removing any configurable hardcoded values
+-- Code checking for directory: Create Directory if it does not exist
+-- Hide directory (attrib +H)
+
+
+
+
+
+ToDos:
+Key Word List -- screen capture on key words
+consider add'l screen captures on specific applications
+Better matching/identification between keys and screens
+Consider adding an audio recording module

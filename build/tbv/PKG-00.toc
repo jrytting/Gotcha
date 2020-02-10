@@ -1,0 +1,123 @@
+('C:\\Users\\Joe Rytting\\PycharmProjects\\Gotcha\\build\\tbv\\PKG-00.pkg',
+ {'BINARY': 1,
+  'DATA': 1,
+  'EXECUTABLE': 1,
+  'EXTENSION': 1,
+  'PYMODULE': 1,
+  'PYSOURCE': 1,
+  'PYZ': 0},
+ [('PYZ-00.pyz',
+   'C:\\Users\\Joe Rytting\\PycharmProjects\\Gotcha\\build\\tbv\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\struct.pyo',
+   'PYMODULE'),
+  ('pyimod01_os_path',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\PyInstaller\\loader\\pyimod01_os_path.pyc',
+   'PYMODULE'),
+  ('pyimod02_archive',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\PyInstaller\\loader\\pyimod02_archive.pyc',
+   'PYMODULE'),
+  ('pyimod03_importers',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\PyInstaller\\loader\\pyimod03_importers.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('tbv',
+   'C:\\Users\\Joe Rytting\\PycharmProjects\\Gotcha\\tbv.py',
+   'PYSOURCE'),
+  ('VCRUNTIME140.dll',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('python36.dll',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\python36.dll',
+   'BINARY'),
+  ('_socket',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('select',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_hashlib',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_ssl',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('pyexpat',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('unicodedata',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_bz2',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('win32gui',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\win32\\win32gui.pyd',
+   'EXTENSION'),
+  ('_ctypes',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('autopy.screen',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\screen.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('autopy.mouse',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\mouse.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('autopy.key',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\key.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('autopy.color',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\color.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('autopy.bitmap',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\bitmap.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('autopy.alert',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\autopy\\alert.cp36-win_amd64.pyd',
+   'EXTENSION'),
+  ('_lzma',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('pywintypes36.dll',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\pywin32_system32\\pywintypes36.dll',
+   'BINARY'),
+  ('base_library.zip',
+   'C:\\Users\\Joe '
+   'Rytting\\PycharmProjects\\Gotcha\\build\\tbv\\base_library.zip',
+   'DATA'),
+  ('tbv.exe.manifest',
+   'C:\\Users\\Joe '
+   'Rytting\\PycharmProjects\\Gotcha\\build\\tbv\\tbv.exe.manifest',
+   'BINARY'),
+  ('pyi-windows-manifest-filename tbv.exe.manifest', '', 'OPTION')],
+ False,
+ False,
+ False,
+ [])
