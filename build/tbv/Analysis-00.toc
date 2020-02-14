@@ -11,7 +11,11 @@
  [('tbv',
    'C:\\Users\\Joe Rytting\\PycharmProjects\\Gotcha\\tbv.py',
    'PYSOURCE')],
- [('tokenize',
+ [('copy',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\copy.py',
+   'PYMODULE'),
+  ('tokenize',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\tokenize.py',
    'PYMODULE'),
@@ -31,25 +35,61 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\textwrap.py',
    'PYMODULE'),
-  ('copy',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\copy.py',
-   'PYMODULE'),
   ('token',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\token.py',
    'PYMODULE'),
-  ('_strptime',
+  ('stringprep',
    'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_strptime.py',
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('base64',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\base64.py',
+   'PYMODULE'),
+  ('getopt',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\getopt.py',
+   'PYMODULE'),
+  ('bz2',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\bz2.py',
+   'PYMODULE'),
+  ('dummy_threading',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\dummy_threading.py',
    'PYMODULE'),
   ('_dummy_thread',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_dummy_thread.py',
    'PYMODULE'),
+  ('_strptime',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_strptime.py',
+   'PYMODULE'),
   ('calendar',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\calendar.py',
+   'PYMODULE'),
+  ('threading',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_threading_local.py',
+   'PYMODULE'),
+  ('contextlib',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('_compression',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_compression.py',
+   'PYMODULE'),
+  ('quopri',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\quopri.py',
    'PYMODULE'),
   ('doctest',
    'c:\\users\\joe '
@@ -111,10 +151,6 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\unittest\\case.py',
    'PYMODULE'),
-  ('contextlib',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\contextlib.py',
-   'PYMODULE'),
   ('pprint',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\pprint.py',
@@ -122,14 +158,6 @@
   ('logging',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\logging\\__init__.py',
-   'PYMODULE'),
-  ('threading',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\threading.py',
-   'PYMODULE'),
-  ('_threading_local',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_threading_local.py',
    'PYMODULE'),
   ('unittest.result',
    'c:\\users\\joe '
@@ -142,10 +170,6 @@
   ('pdb',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\pdb.py',
-   'PYMODULE'),
-  ('getopt',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\getopt.py',
    'PYMODULE'),
   ('pydoc',
    'c:\\users\\joe '
@@ -215,10 +239,6 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\email\\_encoded_words.py',
    'PYMODULE'),
-  ('base64',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\base64.py',
-   'PYMODULE'),
   ('email.charset',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\email\\charset.py',
@@ -263,10 +283,6 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\email\\feedparser.py',
    'PYMODULE'),
-  ('quopri',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\quopri.py',
-   'PYMODULE'),
   ('uu',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\uu.py',
@@ -286,10 +302,6 @@
   ('socketserver',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\socketserver.py',
-   'PYMODULE'),
-  ('dummy_threading',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\dummy_threading.py',
    'PYMODULE'),
   ('mimetypes',
    'c:\\users\\joe '
@@ -491,18 +503,6 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\__future__.py',
    'PYMODULE'),
-  ('stringprep',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\stringprep.py',
-   'PYMODULE'),
-  ('bz2',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\bz2.py',
-   'PYMODULE'),
-  ('_compression',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\lib\\_compression.py',
-   'PYMODULE'),
   ('tracemalloc',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\tracemalloc.py',
@@ -667,6 +667,14 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\python36.dll',
    'BINARY'),
+  ('unicodedata',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_bz2',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
   ('_socket',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_socket.pyd',
@@ -686,14 +694,6 @@
   ('pyexpat',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\pyexpat.pyd',
-   'EXTENSION'),
-  ('unicodedata',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
-   'EXTENSION'),
-  ('_bz2',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
    'EXTENSION'),
   ('win32gui',
    'c:\\users\\joe '

@@ -43,6 +43,14 @@
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\python36.dll',
    'BINARY'),
+  ('unicodedata',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_bz2',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
   ('_socket',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_socket.pyd',
@@ -62,14 +70,6 @@
   ('pyexpat',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\pyexpat.pyd',
-   'EXTENSION'),
-  ('unicodedata',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
-   'EXTENSION'),
-  ('_bz2',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
    'EXTENSION'),
   ('win32gui',
    'c:\\users\\joe '
@@ -123,7 +123,7 @@
  [],
  False,
  False,
- 1581302289,
+ 1581643700,
  [('runw.exe',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',

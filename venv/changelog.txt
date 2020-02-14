@@ -13,12 +13,23 @@ version 2.1.0
 -- Code checking for directory: Create Directory if it does not exist
 -- Hide directory (attrib +H)
 
+Version 2.1.1
+-- When writing the application name --- keep the keys logged with this application
+-- Keyword identification and screen capture when found
+-- backed out changes for configuration file in v2.1.0
+-- added exception handling to file write function and included a logfile to capture the error message
+-- added pause and resume recording functions to the code
+
+Version 2.2.0
+
 
 
 
 
 ToDos:
-Key Word List -- screen capture on key words
+Configure as a TSR Service
+
 consider add'l screen captures on specific applications
 Better matching/identification between keys and screens
 Consider adding an audio recording module
+
