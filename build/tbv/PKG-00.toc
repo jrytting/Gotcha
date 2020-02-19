@@ -32,21 +32,21 @@
   ('tbv',
    'C:\\Users\\Joe Rytting\\PycharmProjects\\Gotcha\\tbv.py',
    'PYSOURCE'),
-  ('VCRUNTIME140.dll',
-   'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\VCRUNTIME140.dll',
-   'BINARY'),
   ('python36.dll',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\python36.dll',
    'BINARY'),
-  ('unicodedata',
+  ('VCRUNTIME140.dll',
    'c:\\users\\joe '
-   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
-   'EXTENSION'),
+   'rytting\\appdata\\local\\programs\\python\\python36\\VCRUNTIME140.dll',
+   'BINARY'),
   ('_bz2',
    'c:\\users\\joe '
    'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('unicodedata',
+   'c:\\users\\joe '
+   'rytting\\appdata\\local\\programs\\python\\python36\\DLLs\\unicodedata.pyd',
    'EXTENSION'),
   ('_socket',
    'c:\\users\\joe '

@@ -16,20 +16,31 @@ version 2.1.0
 Version 2.1.1
 -- When writing the application name --- keep the keys logged with this application
 -- Keyword identification and screen capture when found
+-- added ability to identify keywords and highlite them in the log file
 -- backed out changes for configuration file in v2.1.0
 -- added exception handling to file write function and included a logfile to capture the error message
 -- added pause and resume recording functions to the code
 
-Version 2.2.0
+Version 2.1.2
+-- add ability to increase screen capture rate based on user-defined appliacations coming into focus
+-- Better matching/identification between keys and screens
+-- fix directory not being created if not already there!!
+-- fixed Ignore Applications
 
+Version 3.0
+-- working to create application as a windows service
+-- renamed application to WindowsDisplayService.ph
+-- changed directories to c:\sysdata
+-- changed logfile to "sysdata_logs.txt"
 
 
 
 
 ToDos:
 Configure as a TSR Service
+redo configuration for settings file
+check file size and/or organize files by date change?
 
-consider add'l screen captures on specific applications
-Better matching/identification between keys and screens
+
 Consider adding an audio recording module
 

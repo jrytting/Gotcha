@@ -1,0 +1,28 @@
+Directory/File Functions:
+Does c:\sysdata get created if it does not exist?
+Does c:\sysdata_log.txt file get created if the file does not exist?
+Is c:\sysdata visible?
+Do captures have a .pnx file extension?
+
+Pause and Resume
+Does ctrl+. cause the application to pause logging (both screen and keyboard)?
+Does ctrl+? cause the application to resume logging?
+
+Program Exit
+Does ctrl+` cause the program to exit?
+
+Keyword Detection
+Does application detect keywords?
+
+Ignore Applications
+Does the application ignore user defined applications?
+
+Special Applications
+Does the application increase captures during the detection of special applications?
+
+Blacklist:
+Are blacklisted words identified?
+
+Miscellaneous checks:
+Time Stamps
+
