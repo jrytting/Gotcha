@@ -45,8 +45,9 @@ Version 3.0.2
 -- renamed "user-defined-special-application" to "special-application"  -- cosmetic
 -- renamed "user-defined-ignore-application" to "ingore-application"  -- cosmetic
 
-
-
+Version 3.0.3
+-- fixed issue with KEYWORD identification
+-- removed "dashes" in filename to look less obvious like a date
 
 
 ToDos:
