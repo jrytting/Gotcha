@@ -49,6 +49,9 @@ Version 3.0.3
 -- fixed issue with KEYWORD identification
 -- removed "dashes" in filename to look less obvious like a date
 
+Version 3.0.4
+-- increased the screen capture rate for both normal screen shots and special applications
+-- trigger screen capture on mouse movements to catch browsing w/o keyboard input -- added mouse listener
 
 ToDos:
 Configure as a TSR Service
